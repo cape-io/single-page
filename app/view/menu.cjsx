@@ -14,7 +14,7 @@ MenuItem = React.createClass
     if qty
       qtyEl = <span className="filter-qty">{qty}</span>
 
-    if link and _.isString(link) and link.slice(0, 4) is 'http'
+    if link and ((_.isString(link) and link.slice(0, 4) is 'http') or link[0] is '#')
       # Make normal link
       linkEl = <a href={link}>{title}</a>
     else

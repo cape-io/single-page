@@ -23,9 +23,6 @@ module.exports = React.createClass
 
     <main style={mainStyle}>
       <Hero lead={mission} alt={title} img={profilePhoto} />
-      <section>
-        { React.createElement(RouteHandler, db) }
-      </section>
       <FbEvents events={events} />
       <Members members={members} bars={bars} />
       {if contact then <Contact contact={contact} title={title} /> }
