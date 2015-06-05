@@ -9,7 +9,7 @@ module.exports = React.createClass
       startYear = ''
 
     txt = "All works © #{startYear}#{currentYear} #{author or title}"
-    <footer>
+    <footer className="container">
       <p>{txt}</p>
       <small className="credits">Built by <a href="http://www.ookb.co/">OOKB</a>, Powered by <a href="http://www.ezle.io/">EZLE</a> / <a href="http://www.cape.io/">CAPE</a></small>
     </footer>
