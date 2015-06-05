@@ -21,7 +21,7 @@ module.exports = React.createClass
     else
       mainStyle = {}
 
-    <main style={mainStyle}>
+    <main className="container" style={mainStyle}>
       <Hero lead={mission} alt={title} img={profilePhoto} />
       <FbEvents events={events} />
       <Members members={members} bars={bars} />
