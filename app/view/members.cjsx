@@ -7,13 +7,13 @@ module.exports = React.createClass
     MemberRows = for member, i in members
       {firstname, lastname, position} = member
       key = firstname+lastname
+      if member.bars
+        BarList = for bar, i in member.bars
+          {name, url} = bars[bar]
 
-      BarList = for bar, i in member.bars
-        {name, url} = bars[bar]
-
-        <li key={name}>
-          <a href={url}>{name}</a>
-        </li>
+          <li key={name}>
+            <a href={url}>{name}</a>
+          </li>
 
       <tr className="member" key={key}>
         <td><p>
