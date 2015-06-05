@@ -6,13 +6,14 @@ Menu = require './menu'
 Hero = require './hero'
 FbEvents = require './fbEvents'
 Contact = require './contact'
-DataTable = require './table'
+Members = require './members'
 
 module.exports = React.createClass
 
   render: ->
-    {db, members, facebook} = @props
-    {mission, title} = db
+    {db, members, theme, bars} = @props
+    {mission, title, bgImg, contact, events, profilePhoto} = db
+    {bgImgs} = theme
 
     if bgImgs and bgImg
       mainStyle =
@@ -21,11 +22,11 @@ module.exports = React.createClass
       mainStyle = {}
 
     <main style={mainStyle}>
-      <Hero lead={mission} alt={title} />
+      <Hero lead={mission} alt={title} img={profilePhoto} />
       <section>
-        { React.createElement(RouteHandler, pageData) }
+        { React.createElement(RouteHandler, db) }
       </section>
-      <Events events={facebook.events?.data} />
-      <Members members={members} />
-      <Contact contact={pageData.contact} title={title} />
+      <FbEvents events={events} />
+      <Members members={members} bars={bars} />
+      {if contact then <Contact contact={contact} title={title} /> }
     </main>

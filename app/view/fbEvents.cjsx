@@ -47,10 +47,10 @@ module.exports = React.createClass
       noEventsTxt = 'There are currently no events scheduled in the near future. Please check back soon.'
 
     if events and events.length
-      eventsEl = { _.map events, @eventEl }
+      eventsEl = _.map events, @eventEl
     else
-      eventsEl = <li className="no-events">{noEvents}</li>
+      eventsEl = <li className="no-events">{noEventsTxt}</li>
 
     <ul className="fb-events">
-      eventsEl
+      {eventsEl}
     </ul>

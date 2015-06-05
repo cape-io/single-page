@@ -8,7 +8,7 @@ module.exports = React.createClass
     router: React.PropTypes.func.isRequired
   }
   render: ->
-    {theme} = @props
+    {theme, db} = @props
     {css, js, meta, settings, navTitle} = theme
     {homepageId, display, defaultDisplay, fluid} = settings
     {pageId, contentId, filterType, filterValue} = @context.router.getCurrentParams()
