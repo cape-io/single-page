@@ -22,6 +22,7 @@
     "ampersand-sync": "^3.0.7",
     "cookies-js": "^1.2.1",
     "lodash": "3.x",
+    "moment": "^2.10.3",
     "qs": "2.x",
     "react": "0.13.x",
     "react-router": "0.13.x",
