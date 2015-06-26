@@ -2,7 +2,7 @@ React = require 'react'
 
 module.exports = React.createClass
   render: ->
-    {images} = @props.data
+    {images} = @props
 
     pics = for pic, i in images
       <li className="four columns" key={pic.id}>
