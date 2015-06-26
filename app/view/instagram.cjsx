@@ -2,9 +2,9 @@ React = require 'react'
 
 module.exports = React.createClass
   render: ->
-    {instagram} = @props.data
+    {images} = @props.data
 
-    pics = for pic, i in instagram
+    pics = for pic, i in images
       <li className="four columns" key={pic.id}>
         <div className="polaroid">
           <img src={pic.url} width={pic.width} height={pic.height} />
