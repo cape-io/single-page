@@ -1,14 +1,21 @@
 React = require 'react'
+_ = require 'lodash'
 
 module.exports = React.createClass
   render: ->
     {images} = @props
 
-    pics = for pic, i in images
-      <li className="four columns" key={pic.id}>
+    pics = _.map images, (picInfo, i) ->
+      {id, caption} = picInfo
+      if picInfo.images?.standard_resolution
+        {url, width, height} = picInfo.images.standard_resolution
+      if caption?.text
+        caption = caption.text
+
+      <li className="four columns" key={id}>
         <div className="polaroid">
-          <img src={pic.url} width={pic.width} height={pic.height} />
-          <p>{pic.caption}</p>
+          <img src={url} width={width} height={height} />
+          <p>{caption}</p>
         </div>
       </li>
 
