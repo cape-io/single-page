@@ -51,6 +51,9 @@ module.exports = React.createClass
     else
       eventsEl = <li className="no-events">{noEventsTxt}</li>
 
-    <ul className="fb-events">
-      {eventsEl}
-    </ul>
+    <section id="events">
+      <h3>Events</h3>
+      <ul className="fb-events">
+        {eventsEl}
+      </ul>
+    </section>
