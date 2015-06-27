@@ -25,7 +25,7 @@ module.exports = React.createClass
       if facebook.impressum and not mission
         mission = facebook.impressum
       if facebook.coverPhotos?.length and not profilePhoto
-        profilePhoto = facebook.coverPhotos[0].images[0]
+        profilePhoto = facebook.coverPhotos[0].urlWide
 
     <main className="container" style={mainStyle}>
       <Hero lead={mission} alt={title} img={profilePhoto} />
