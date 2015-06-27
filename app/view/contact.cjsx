@@ -28,21 +28,25 @@ module.exports = React.createClass
       titleEl = <span className="organization-name">{title}</span>
 
     # http://microformats.org/wiki/hcard
+    # updated: http://microformats.org/wiki/h-card
     if location
       {street, city, country, state, zip} = location
       addressEl =
         <div className="adr">
-          <span className="street-address">{street}</span>
-          <span className="locality">{city}</span>,
-          <span className="region">{state}</span>
-          <span className="postal-code">{zip}</span>
-          <span className="country-name">{country}</span>
+          <div className="street-address">{street}</div>
+          <div>
+            <span className="locality">{city}</span>,
+            <abbr className="region"> {state}</abbr>
+            <span className="postal-code"> {zip}</span>,
+            <span className="country-name"> {country}</span>
+          </div>
         </div>
     if phone
       telLink = "tel:+1#{phone.replace(/\D/g,'')}"
       phoneEl = <div className="tel">Tel: <a href={telLink}><span itemProp="telephone" className="value">{phone}</span></a></div>
 
     <section id="contact">
+      <h3>Contact</h3>
       <div className="inner">
 
         <div className="contact-details vcard">
@@ -50,10 +54,11 @@ module.exports = React.createClass
           {titleEl}
           {addressEl}
           {phoneEl}
-          <span className="email"><a href="mailto:info@loremipsum.com">{email}</a></span>
+          <span className="email">Email: <a href="mailto:info@loremipsum.com">{email}</a></span>
         </div>
 
         <ContactForm />
 
       </div>
     </section>
+
