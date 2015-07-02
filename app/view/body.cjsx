@@ -6,9 +6,9 @@ Footer = require './footer'
 
 module.exports = React.createClass
   render: ->
-    {theme, db, facebook, instagram} = @props
+    {theme, db, facebook, instagram, currentYear} = @props
     {settings} = theme
-    {title, tagline, about, mission, author, currentYear, startYear} = db
+    {title, tagline, about, mission, author, startYear} = db
 
     <body>
       <Header
