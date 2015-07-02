@@ -8,12 +8,14 @@ Hero = require './hero'
 FbEvents = require './fbEvents'
 Contact = require './contact'
 Members = require './members'
+Vintage = require './vintage'
+Directions = require './directions'
 
 module.exports = React.createClass
 
   render: ->
     {db, members, theme, bars, instagram, facebook} = @props
-    {mission, title, bgImg, contact, events, profilePhoto} = db
+    {mission, title, bgImg, contact, events, profilePhoto, vintage, directions} = db
     {bgImgs} = theme
 
     if bgImgs and bgImg
@@ -38,5 +40,7 @@ module.exports = React.createClass
         if members and bars
           <Members members={members} bars={bars} />
       }
-      {if contact then <Contact contact={contact} title={title} /> }
+      { if vintage then React.createElement(Vintage, vintage) }
+      { if contact then <Contact contact={contact} title={title} /> }
+      { if directions then React.createElement(Directions, directions) }
     </main>
