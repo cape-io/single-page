@@ -27,7 +27,8 @@
     "react": "0.13.x",
     "react-router": "0.13.x",
     "reactable": "^0.10.1",
-    "superagent": "0.x"
+    "superagent": "0.x",
+    "cape-react-contact": "git://github.com/cape-io/cape-react-contact"
   },
   "devDependencies": {
     "coffee-reactify": "*",

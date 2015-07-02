@@ -1,6 +1,6 @@
 React = require 'react'
 
-ContactForm = require './contactForm'
+ContactForm = require 'cape-react-contact'
 
 module.exports = React.createClass
 
@@ -61,4 +61,3 @@ module.exports = React.createClass
 
       </div>
     </section>
-
